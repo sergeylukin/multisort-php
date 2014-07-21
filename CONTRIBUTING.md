@@ -1,4 +1,4 @@
-## Rules
+## Guideline
 
 Contributing is absolutely encouraged, but a few things should be taken into
 account:
@@ -23,10 +23,6 @@ account:
     - don't be afraid to squash your commits
 
     - rebase onto the parent's upstream branch before pushing your remote
-
-[unit-testing]: http://github.com/sergeylukin/multisort-php/blob/master/README.md#unit-testing
-[psr-2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
-[php code sniffer]: https://github.com/squizlabs/PHP_CodeSniffer
 
 
 ## Setup
@@ -66,3 +62,9 @@ Run `./bin/phpunit` to run unit tests
 
 Run `./bin/phpcs --standard=PSR2 --encoding=utf-8 -p src/ tests/` to validate
 code against [PSR-2][] standard
+
+[unit testing]: http://github.com/sergeylukin/multisort-php/blob/master/README.md#unit-testing
+[psr-2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
+[php code sniffer]: https://github.com/squizlabs/PHP_CodeSniffer
+[composer]: https://getcomposer.org
+[phpunit]: https://github.com/sebastianbergmann/phpunit/

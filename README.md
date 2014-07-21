@@ -49,4 +49,3 @@ Released under [MIT license][]
 [contributors]: https://github.com/sergeylukin/multisort-php/graphs/contributors
 [phpunit]: https://github.com/sebastianbergmann/phpunit/
 [php code sniffer]: https://github.com/squizlabs/PHP_CodeSniffer
-[composer]: https://getcomposer.org
