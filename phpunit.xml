@@ -1,7 +1,16 @@
 <phpunit bootstrap="./tests/bootstrap.php" colors="true">
+
   <testsuites>
     <testsuite name="Multisort Test Suite">
       <directory suffix="Test.php">./tests/Multisort/Test/</directory>
     </testsuite>
   </testsuites>
+
+  <!-- Only parse library source directory for code coverage calculation -->
+  <filter>
+    <whitelist>
+      <directory suffix=".php">./src/</directory>
+    </whitelist>
+  </filter>
+
 </phpunit>
