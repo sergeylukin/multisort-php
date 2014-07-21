@@ -5,9 +5,8 @@ insanely-dimensional arrays.
 
 # Changelog
 
-### 0.1.0 (July 21, 2014)
-
-  * Initial release
+See the
+[changelog](https://github.com/sergeylukin/multisort-php/blob/master/CHANGELOG.md).
 
 # License
 
