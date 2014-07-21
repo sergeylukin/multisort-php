@@ -28,6 +28,8 @@ the project's directory.
 
 * ✓ add core functionality
 * ✓ follow [PSR-2][] coding style standard + automatically validate files on every build
+* write documentation in [reStructuredText][] format, build it using [Sphinx][]
+  and host it on [ReadTheDocs][]
 * come up with friendlier names for methods, arguments and variables
 * add PhpDoc notations everywhere
 
@@ -49,3 +51,6 @@ Released under [MIT license][]
 [contributors]: https://github.com/sergeylukin/multisort-php/graphs/contributors
 [phpunit]: https://github.com/sebastianbergmann/phpunit/
 [php code sniffer]: https://github.com/squizlabs/PHP_CodeSniffer
+[restructuredtext]: http://sphinx-doc.org/rest.html
+[sphinx]: http://sphinx-doc.org/
+[readthedocs]: https://readthedocs.org/
