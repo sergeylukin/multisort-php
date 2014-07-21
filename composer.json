@@ -1,8 +1,10 @@
 {
   "name": "sergeylukin/multisort-php",
   "type": "library",
+  "license": "MIT",
   "description": "Sort n-dimensional arrays",
   "keywords": ["multisort", "multidimensional", "array"],
+  "homepage": "https://github.com/sergeylukin/multisort-php",
   "support": {
     "issues": "https://github.com/sergeylukin/multisort-php/issues",
     "source": "https://github.com/sergeylukin/multisort-php"
@@ -15,11 +17,13 @@
       "role": "Developer"
     }
   ],
-  "license": "MIT",
   "require": {
     "php": ">=5.2.0"
   },
+  "require-dev": {
+    "phpunit/phpunit": "~3.7"
+  },
   "autoload": {
-    "classmap": ["Multisort.php"]
+    "psr-0": { "Multisort": "src/" },
   }
 }
