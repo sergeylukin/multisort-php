@@ -17,6 +17,7 @@ See [Multisort contributors](https://github.com/sergeylukin/multisort-php/graphs
 [Multisort][] is a work in progress, so any ideas and patches are appreciated.
 
 * ✓ add core functionality
+* ✓ follow [PSR-2][] coding style standard + automatically validate files on every build
 * come up with friendlier names for methods, arguments and variables
 * add PhpDoc notations everywhere
 
@@ -31,3 +32,4 @@ Released under [MIT license][]
 [multisort]: http://github.com/sergeylukin/multisort-php
 [mit license]: http://sergey.mit-license.org/
 [changelog]: http://github.com/sergeylukin/multisort-php/blob/master/CHANGELOG.md
+[psr-2]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
