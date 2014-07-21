@@ -1,17 +1,17 @@
 [ ![Build status](https://travis-ci.org/sergeylukin/multisort-php.png?branch=master "Build status") ](https://travis-ci.org/sergeylukin/multisort-php)
 [ ![Project status](http://stillmaintained.com/sergeylukin/multisort-php.png "Project status") ](http://stillmaintained.com/sergeylukin/multisort-php)
 
+
 ## About
 
 [Multisort][] is a collection of PHP methods that allow sorting
 insanely-dimensional arrays in multiple ways.
 
+
 ## Contributing
 
-- [Contributing guide][contributing]
-- [Current contributors][contributors]
+See [contributing guide][contributing]
 
-*Thank you!*
 
 ## Setup
 
@@ -51,6 +51,7 @@ Run `./bin/phpunit` to run unit tests
 Run `./bin/phpcs --standard=PSR2 --encoding=utf-8 -p src/ tests/` to validate
 code against [PSR-2][] standard
 
+
 ## Unit Testing
 
 This project uses [PHPUnit][] as it's unit testing framework.
@@ -58,6 +59,7 @@ This project uses [PHPUnit][] as it's unit testing framework.
 To test the project, simply run `phpunit` if you've installed it globally
 or run `./bin/phpunit` if you installed it with `composer install` inside
 the project's directory.
+
 
 ## TODO:
 
@@ -68,9 +70,11 @@ the project's directory.
 * come up with friendlier names for methods, arguments and variables
 * add PhpDoc notations everywhere
 
+
 ## Changelog
 
 See the [changelog][].
+
 
 ## License
 
