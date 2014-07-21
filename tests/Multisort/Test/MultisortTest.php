@@ -4,7 +4,7 @@ namespace Multisort\Test;
 
 use Multisort\Multisort;
 
-class FunctionsTest extends \PHPUnit_Framework_TestCase
+class MultisortTest extends \PHPUnit_Framework_TestCase
 {
   private $Multisort;
 

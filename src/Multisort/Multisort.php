@@ -2,21 +2,20 @@
 
 namespace Multisort;
 
-class Multisort {
-
+class Multisort
+{
   public function __construct() {}
 
-  public function deepsort(&$array, $sort_by_key, $direction = SORT_ASC, $level_to_sort = -1, $sort_deeper_levels = true, $current_level = 0, &$original_array = array(), $path_to_level_that_should_be_sorted = '') {
-
+  public function deepsort(&$array, $sort_by_key, $direction = SORT_ASC, $level_to_sort = -1, $sort_deeper_levels = true, $current_level = 0, &$original_array = array(), $path_to_level_that_should_be_sorted = '')
+  {
     // Initialize current level
     $current_level++;
 
     // Do the preparation work
-    if( $current_level === 1 )
-    {
+    if ($current_level === 1) {
       $level_of_sorting_key_parent = $this->returnLevelOfArrayKey($sort_by_key, $array) - 1;
 
-      if( $level_to_sort < 0 ) {
+      if ($level_to_sort < 0) {
         $level_to_sort = $level_of_sorting_key_parent + $level_to_sort;
       }
 
@@ -25,10 +24,8 @@ class Multisort {
       $original_array = & $array;
     }
 
-    if( $current_level !== $level_to_sort + 1 )
-    {
-      foreach( $array as $key => $value )
-      {
+    if ($current_level !== $level_to_sort + 1) {
+      foreach ($array as $key => $value) {
         $new_path = $path_to_level_that_should_be_sorted . (!empty($path_to_level_that_should_be_sorted)?'|:|':'') . $key;
 
         $this->deepsort($array[$key], $sort_by_key, $direction, $level_to_sort, $sort_deeper_levels, $current_level, $original_array, $new_path);
@@ -43,10 +40,10 @@ class Multisort {
 
   }
 
-  public function returnLevelOfArrayKey($needle, $array, $level = 1) {
-    foreach( $array as $key => $value ) {
-      if( $key === $needle )
-      {
+  public function returnLevelOfArrayKey($needle, $array, $level = 1)
+  {
+    foreach ($array as $key => $value) {
+      if ($key === $needle) {
         return $level;
       } else {
         $level++;
@@ -62,8 +59,7 @@ class Multisort {
 
     $loc = &$array;
 
-    foreach(explode('|:|', $path) as $step)
-    {
+    foreach (explode('|:|', $path) as $step) {
       $loc = &$loc[$step];
     }
 
@@ -72,21 +68,17 @@ class Multisort {
 
   public function getTotalLevelsInArray($array)
   {
-    if (is_array(reset($array)))
-    {
+    if (is_array(reset($array))) {
       $return = $this->getTotalLevelsInArray(reset($array)) + 1;
-    }
-
-    else
-    {
+    } else {
       $return = 1;
     }
 
     return $return;
   }
 
-  public function getValueOfKeyInMultiDimensionalArray($needle, $array, $level = 1) {
-
+  public function getValueOfKeyInMultiDimensionalArray($needle, $array, $level = 1)
+  {
     if( !is_array($array) ) return null;
 
     if( isset($array[$needle]) ) return $array[$needle];
@@ -94,18 +86,16 @@ class Multisort {
     $found_values = array();
 
     $next_level = $level + 1;
-    foreach( $array as $key => $value ) {
+    foreach ($array as $key => $value) {
 
-      if( isset($value[$key]) )
-      {
+      if ( isset($value[$key]) ) {
         $found_value = $value[$key];
       } else {
         $found_value = $this->getValueOfKeyInMultiDimensionalArray($needle, $value, $next_level);
       }
 
-      if( $found_value !== null )
-      {
-        if( is_array($found_value) ) {
+      if ($found_value !== null) {
+        if ( is_array($found_value) ) {
           foreach($found_value as $found_value_node ) array_push($found_values, $found_value_node);
         } else {
           array_push($found_values, $found_value);
@@ -114,45 +104,39 @@ class Multisort {
 
     }
 
-    if( $level === 1 )
-    {
+    if ($level === 1) {
 
-      if( count($found_values) > 1 )
-      {
+      if ( count($found_values) > 1 ) {
         return $found_values;
-      } elseif( count($found_values) === 1 ) {
+      } elseif ( count($found_values) === 1 ) {
         return $found_values[0];
       }
 
-    } elseif( !empty($found_values) ) {
+    } elseif ( !empty($found_values) ) {
       return $found_values;
     }
 
     return null;
   }
 
-  public function sort (&$array, $sort_key, $direction = SORT_ASC, $deep = true) {
-
+  public function sort(&$array, $sort_key, $direction = SORT_ASC, $deep = true)
+  {
     if( !is_array($array) ) return null;
 
     $sorter = array();
     $ret=array();
     reset($array);
-    foreach( $array as $key => $subarray )
-    {
-      if( is_array($subarray) )
-      {
-        if( $deep && $this->getTotalLevelsInArray($subarray) > 1 )
-        {
+    foreach ($array as $key => $subarray) {
+      if ( is_array($subarray) ) {
+        if ( $deep && $this->getTotalLevelsInArray($subarray) > 1 ) {
           $this->sort($array[$key], $sort_key, $direction, $deep);
         }
 
         $value = $this->getValueOfKeyInMultiDimensionalArray($sort_key, $subarray);
 
-        if( is_array($value) )
-        {
+        if ( is_array($value) ) {
           $numeric = is_numeric($value[0]);
-          if( $direction === SORT_ASC ) {
+          if ($direction === SORT_ASC) {
             if( $numeric ) sort($value, SORT_NUMERIC);
             else sort($value);
           } else {
@@ -171,7 +155,7 @@ class Multisort {
     // Detect type of value - numeric/string
     $numeric = is_numeric($value);
 
-    if( $direction === SORT_ASC ) {
+    if ($direction === SORT_ASC) {
       if( $numeric ) asort($sorter);
       else ksort($sorter);
     } else {
