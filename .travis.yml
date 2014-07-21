@@ -24,13 +24,14 @@ matrix:
   fast_finish: true
 
 before_script:
-  #
+  - composer self-update
+
   # Install deps but install from dist if available.
   # Supposed to run smoother on build server.
   #
   # For more details:
   # https://getcomposer.org/doc/03-cli.md
-  - composer install --prefer-dist --dev
+  - composer install --no-interaction --prefer-dist --dev
 
 script:
   - ./bin/phpunit --verbose --coverage-text
