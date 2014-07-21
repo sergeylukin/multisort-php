@@ -1,16 +1,30 @@
 [ ![Build status](https://travis-ci.org/sergeylukin/multisort-php.png?branch=master "Build status") ](https://travis-ci.org/sergeylukin/multisort-php)
 [ ![Project status](http://stillmaintained.com/sergeylukin/multisort-php.png "Project status") ](http://stillmaintained.com/sergeylukin/multisort-php)
 
-# About
+## About
 
 [Multisort][] is a collection of PHP methods that allow sorting
 insanely-dimensional arrays in multiple ways.
 
-# Changelog
+## Contributors
+
+See [Multisort contributors](https://github.com/sergeylukin/multisort-php/graphs/contributors)
+
+*Thank you!*
+
+## TODO:
+
+[Multisort][] is a work in progress, so any ideas and patches are appreciated.
+
+* ✓ add core functionality
+* come up with friendlier names for methods, arguments and variables
+* add PhpDoc notations everywhere
+
+## Changelog
 
 See the [changelog][].
 
-# License
+## License
 
 Released under [MIT license][]
 
