@@ -64,8 +64,8 @@ class Multisort
             if ($key === $needle) {
                 return $level;
             } else {
-                $level++;
                 if (is_array($value)) {
+                    $level++;
                     return $this->returnLevelOfArrayKey($needle, $value, $level);
                 }
             }
